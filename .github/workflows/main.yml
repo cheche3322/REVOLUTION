@@ -33,6 +33,13 @@ jobs:
         pip install streamlit
         pip install stripe
 
-    - name: Run Streamlit App
+    - name: Print Python version
+      run: python --version
+
+    - name: Print Streamlit version
+      run: streamlit --version
+
+    - name: Run Streamlit App with Debugging
       run: |
+        set -x
         streamlit run src/scripts/youtube_dashboard.py
